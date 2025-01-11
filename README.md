@@ -1,7 +1,7 @@
 
 # 
 
-1. **Construir y Ejecutar la Aplicación con Docker
+### 1. **Construir y Ejecutar la Aplicación con Docker
 
 ### Construir la Imagen
 
@@ -24,7 +24,7 @@ docker-compose up --build
 - La API estará disponible en: [http://localhost:8000](http://localhost:8000)
 - MongoDB estará expuesto en el puerto `27017`.
 
-2. **Prueba la API:**
+###2. **Prueba la API:**
    Abre la documentación interactiva en: [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ---
@@ -75,6 +75,9 @@ curl -X DELETE http://localhost:8000/products/123
 ---
 
 ## 4. Pruebas Unitarias
+
+pipeline 
+![Screen Shot 2025-01-11 at 08 21 29 AM](https://github.com/user-attachments/assets/297d5c63-c51b-4fb9-a1e2-3bf30bca98f9)
 
 ### Ejecutar Todas las Pruebas
 
