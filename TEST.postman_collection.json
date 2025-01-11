@@ -1,0 +1,813 @@
+{
+	"info": {
+		"_postman_id": "dac5d9c2-2de8-4ebd-b6fe-23a3f240fdc5",
+		"name": "TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "592266",
+		"_collection_link": "https://speeding-star-406872.postman.co/workspace/speeding-star-406872-Workspace~9b1f3324-479e-42e4-8bab-17b8bbe3686c/collection/592266-dac5d9c2-2de8-4ebd-b6fe-23a3f240fdc5?action=share&source=collection_link&creator=592266"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"product_id\": \"12345\",\n  \"name\": \"Producto Ejemplo\",\n  \"description\": \"Este es un producto de prueba\",\n  \"price\": 100.0,\n  \"stock\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"product_id\": \"12345\",\n  \"name\": \"Producto Ejemplo\",\n  \"description\": \"Este es un producto de prueba\",\n  \"price\": 100.0,\n  \"stock\": 10\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 11 Jan 2025 10:52:15 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "236"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"67824d607d9837405a89159f\",\n    \"product_id\": \"12345\",\n    \"name\": \"Producto Ejemplo\",\n    \"description\": \"Este es un producto de prueba\",\n    \"price\": 100,\n    \"stock\": 10,\n    \"created_at\": \"2025-01-11T10:52:16.247081\",\n    \"updated_at\": \"2025-01-11T10:52:16.247085\"\n}"
+						},
+						{
+							"name": "422",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 11 Jan 2025 10:56:18 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "407"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": [\n        {\n            \"loc\": [\n                \"body\",\n                \"product_id\"\n            ],\n            \"msg\": \"field required\",\n            \"type\": \"value_error.missing\"\n        },\n        {\n            \"loc\": [\n                \"body\",\n                \"name\"\n            ],\n            \"msg\": \"field required\",\n            \"type\": \"value_error.missing\"\n        },\n        {\n            \"loc\": [\n                \"body\",\n                \"description\"\n            ],\n            \"msg\": \"field required\",\n            \"type\": \"value_error.missing\"\n        },\n        {\n            \"loc\": [\n                \"body\",\n                \"price\"\n            ],\n            \"msg\": \"field required\",\n            \"type\": \"value_error.missing\"\n        },\n        {\n            \"loc\": [\n                \"body\",\n                \"stock\"\n            ],\n            \"msg\": \"field required\",\n            \"type\": \"value_error.missing\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 11 Jan 2025 10:53:52 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "473"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"67824cbd7d9837405a89159e\",\n        \"product_id\": \"123\",\n        \"name\": \"Producto Ejemplo\",\n        \"description\": \"Este es un producto de prueba\",\n        \"price\": 100,\n        \"stock\": 10,\n        \"created_at\": \"2025-01-11T10:49:33.458000\",\n        \"updated_at\": \"2025-01-11T10:49:33.458000\"\n    },\n    {\n        \"_id\": \"67824d607d9837405a89159f\",\n        \"product_id\": \"12345\",\n        \"name\": \"Producto Ejemplo\",\n        \"description\": \"Este es un producto de prueba\",\n        \"price\": 100,\n        \"stock\": 10,\n        \"created_at\": \"2025-01-11T10:52:16.247000\",\n        \"updated_at\": \"2025-01-11T10:52:16.247000\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/products/123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								"123"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/products/123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"products",
+										"123"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 11 Jan 2025 10:54:33 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "234"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"67824cbd7d9837405a89159e\",\n    \"product_id\": \"123\",\n    \"name\": \"Producto Ejemplo\",\n    \"description\": \"Este es un producto de prueba\",\n    \"price\": 100,\n    \"stock\": 10,\n    \"created_at\": \"2025-01-11T10:49:33.458000\",\n    \"updated_at\": \"2025-01-11T10:49:33.458000\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Producto Actualizado\",\n  \"price\": 150.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/products/123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								"123"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Producto Actualizado\",\n  \"price\": 150.0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/products/123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"products",
+										"123"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 11 Jan 2025 10:55:16 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "238"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"67824cbd7d9837405a89159e\",\n    \"product_id\": \"123\",\n    \"name\": \"Producto Actualizado\",\n    \"description\": \"Este es un producto de prueba\",\n    \"price\": 150,\n    \"stock\": 10,\n    \"created_at\": \"2025-01-11T10:49:33.458000\",\n    \"updated_at\": \"2025-01-11T10:49:33.458000\"\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Producto Actualizado\",\n  \"price\": 150.0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/products/55",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"products",
+										"55"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 11 Jan 2025 10:55:41 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "30"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Product not found\"\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/products/123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"products",
+										"123"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 11 Jan 2025 10:59:38 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "60"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"At least one field must be provided for update.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/products/123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								"123"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/products/123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"products",
+										"123"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 11 Jan 2025 10:57:27 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "29"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product deleted\"\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/products/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"products",
+										"1"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 11 Jan 2025 10:57:39 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "30"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Product not found\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "weather",
+			"item": [
+				{
+					"name": "direct",
+					"item": [
+						{
+							"name": "get_weather_by_city",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://api.openweathermap.org/data/2.5/weather?q=Manizales&appid=c9045a45115e3e4392129007cffb2538&units=metric",
+											"protocol": "https",
+											"host": [
+												"api",
+												"openweathermap",
+												"org"
+											],
+											"path": [
+												"data",
+												"2.5",
+												"weather"
+											],
+											"query": [
+												{
+													"key": "q",
+													"value": "Manizales"
+												},
+												{
+													"key": "appid",
+													"value": "c9045a45115e3e4392129007cffb2538"
+												},
+												{
+													"key": "units",
+													"value": "metric"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "openresty"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 11 Jan 2025 11:50:02 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "512"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Cache-Key",
+											"value": "/data/2.5/weather?q=manizales&units=metric"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"coord\": {\n        \"lon\": -75.5174,\n        \"lat\": 5.0689\n    },\n    \"weather\": [\n        {\n            \"id\": 802,\n            \"main\": \"Clouds\",\n            \"description\": \"scattered clouds\",\n            \"icon\": \"03d\"\n        }\n    ],\n    \"base\": \"stations\",\n    \"main\": {\n        \"temp\": 12.78,\n        \"feels_like\": 12.41,\n        \"temp_min\": 12.78,\n        \"temp_max\": 12.9,\n        \"pressure\": 1017,\n        \"humidity\": 88,\n        \"sea_level\": 1017,\n        \"grnd_level\": 796\n    },\n    \"visibility\": 9000,\n    \"wind\": {\n        \"speed\": 2.57,\n        \"deg\": 100\n    },\n    \"clouds\": {\n        \"all\": 40\n    },\n    \"dt\": 1736596202,\n    \"sys\": {\n        \"type\": 2,\n        \"id\": 2084698,\n        \"country\": \"CO\",\n        \"sunrise\": 1736594064,\n        \"sunset\": 1736636722\n    },\n    \"timezone\": -18000,\n    \"id\": 3675443,\n    \"name\": \"Manizales\",\n    \"cod\": 200\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "integration",
+					"item": [
+						{
+							"name": "get_weather_by_city",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/weather?city=London",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"weather"
+									],
+									"query": [
+										{
+											"key": "city",
+											"value": "London"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/weather?city=London",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"weather"
+											],
+											"query": [
+												{
+													"key": "city",
+													"value": "London"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "date",
+											"value": "Sat, 11 Jan 2025 12:10:42 GMT"
+										},
+										{
+											"key": "server",
+											"value": "uvicorn"
+										},
+										{
+											"key": "content-length",
+											"value": "46"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"temperature\": 1.26,\n    \"description\": \"clear sky\"\n}"
+								}
+							]
+						},
+						{
+							"name": "get_weather_by_coordinates",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/weather?lat=51.5074&lon=-0.1278",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"weather"
+									],
+									"query": [
+										{
+											"key": "lat",
+											"value": "51.5074"
+										},
+										{
+											"key": "lon",
+											"value": "-0.1278"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/weather?lat=51.5074&lon=-0.1278",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"weather"
+											],
+											"query": [
+												{
+													"key": "lat",
+													"value": "51.5074"
+												},
+												{
+													"key": "lon",
+													"value": "-0.1278"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "date",
+											"value": "Sat, 11 Jan 2025 12:10:46 GMT"
+										},
+										{
+											"key": "server",
+											"value": "uvicorn"
+										},
+										{
+											"key": "content-length",
+											"value": "46"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"temperature\": 1.12,\n    \"description\": \"clear sky\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

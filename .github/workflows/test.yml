@@ -1,0 +1,40 @@
+name: Run Unit Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      # 3. Install Poetry
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo "export PATH=$HOME/.local/bin:$PATH" >> $GITHUB_ENV
+
+      # 4. Install dependencies (including dev dependencies)
+      - name: Install dependencies
+        run: |
+          poetry install --with dev --no-root --no-interaction --no-ansi
+
+      # 5. Run unit tests with coverage
+      - name: Run Unit Tests
+        run: |
+          TESTING=true poetry run pytest --cov=app tests/
