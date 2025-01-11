@@ -1,11 +1,28 @@
 
-# **Inicia el servidor:**
+# 
 
-1.
+1. **Construir y Ejecutar la Aplicación con Docker
 
-   ```bash
-   poetry run uvicorn app.main:app --reload
-   ```
+### Construir la Imagen
+
+```bash
+docker-compose build
+```
+
+### Ejecutar los Contenedores
+
+```bash
+docker-compose up
+```
+
+```bash
+docker-compose up --build
+```
+
+### Verificar la Aplicación
+
+- La API estará disponible en: [http://localhost:8000](http://localhost:8000)
+- MongoDB estará expuesto en el puerto `27017`.
 
 2. **Prueba la API:**
    Abre la documentación interactiva en: [http://localhost:8000/docs](http://localhost:8000/docs)
@@ -57,32 +74,7 @@ curl -X DELETE http://localhost:8000/products/123
 
 ---
 
-## 4. Construir y Ejecutar la Aplicación con Docker
-
-### Construir la Imagen
-
-```bash
-docker-compose build
-```
-
-### Ejecutar los Contenedores
-
-```bash
-docker-compose up
-```
-
-```bash
-docker-compose up --build
-```
-
-### Verificar la Aplicación
-
-- La API estará disponible en: [http://localhost:8000](http://localhost:8000)
-- MongoDB estará expuesto en el puerto `27017`.
-
----
-
-## 5. Pruebas Unitarias
+## 4. Pruebas Unitarias
 
 ### Ejecutar Todas las Pruebas
 
